@@ -4,17 +4,14 @@
 {% block title %}LeMax Hamburgueria - Food Ready{% endblock %}
 
 {% block content %}
-{# O fundo vermelho e a classe de ecrã inteiro são aplicados aqui #}
 <div class="container lemax-page full-width-page" style="background-color: #E63026;">
 
     <div class="lemax-header">
-        <a href="{% url 'restaurantes' %}" class="icon-link">&#8592;</a> {# Seta para voltar #}
+        <a href="{% url 'restaurantes' %}" class="icon-link">&#8592;</a>
         <img src="https://www.lemaxhamburgueria.com.br/wp-content/uploads/2021/06/lemax-hamburgeria-logo-branco.png" alt="Logo LeMax" class="lemax-logo">
-        <a href="#" class="cart-icon-link">&#128722;</a> {# Ícone do carrinho #}
     </div>
 
     <main>
-        {# Nova imagem que você forneceu #}
         <img class="lemax-hero-image" src="https://img.restaurantguru.com/rd5f-LeMax-Hamburgueria-Puc-Rio-Gavea-burger.jpg" alt="Hamburguer LeMax">
         
         <h2 class="lemax-category">Burgers</h2>
@@ -28,8 +25,7 @@
                 </div>
                 <p class="item-description">Pão, carne de 180g, queijo, alface, tomate e molho especial.</p>
                 <div class="item-action">
-                    {# Botão "Adicionar" substituído pelo ícone do carrinho #}
-                    <a href="#" class="lemax-cart-icon">&#128722;</a>
+                    <a href="{% url 'add_carrinho' produto_nome='LeMax Clássico' produto_preco='35.00' %}" class="lemax-cart-icon">&#128722;</a>
                 </div>
             </div>
 
@@ -41,8 +37,7 @@
                 </div>
                 <p class="item-description">Pão, duas carnes de 180g, queijo duplo, picles e molho da casa.</p>
                 <div class="item-action">
-                    {# Botão "Adicionar" substituído pelo ícone do carrinho #}
-                    <a href="#" class="lemax-cart-icon">&#128722;</a>
+                    <a href="{% url 'add_carrinho' produto_nome='LeMax Duplo' produto_preco='45.00' %}" class="lemax-cart-icon">&#128722;</a>
                 </div>
             </div>
 
@@ -54,8 +49,7 @@
                 </div>
                 <p class="item-description">Pão vegano, burger à base de plantas, queijo vegano e salada.</p>
                  <div class="item-action">
-                    {# Botão "Adicionar" substituído pelo ícone do carrinho #}
-                    <a href="#" class="lemax-cart-icon">&#128722;</a>
+                    <a href="{% url 'add_carrinho' produto_nome='LeMax Vegano' produto_preco='38.00' %}" class="lemax-cart-icon">&#128722;</a>
                 </div>
             </div>
         </div>
