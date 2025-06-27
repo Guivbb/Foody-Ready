@@ -14,4 +14,5 @@ urlpatterns = [
     path('porto-do-sabor/', views.porto_do_sabor_detail_view, name='porto_do_sabor_detail'),
     path('megamatte/', views.megamatte_detail_view, name='megamatte_detail'),
     path('carrinho/', views.carrinho_view, name='carrinho'),
+    path('add-carrinho/<str:produto_nome>/<str:produto_preco>/', views.add_carrinho_view, name='add_carrinho'),
 ]
