@@ -1,0 +1,34 @@
+{% extends 'contas/base.html' %}
+{% load static %}
+
+{% block title %}Menu{% endblock %}
+
+{% block content %}
+<div class="menu-principal-container">
+    <header class="menu-header-v2">
+        <a href="#configuracoes" class="settings-icon" aria-label="Configurações">&#9881;</a>
+        <h1>Menu</h1>
+    </header>
+
+    <ul class="menu-list-v2">
+        <li>
+            <a href="{% url 'restaurantes' %}" class="menu-item-v2">
+                <img src="https://th.bing.com/th/id/R.baf4a3a4ab91b573dd824279f133f794?rik=%2bTBq13Oq7SJ%2beA&pid=ImgRaw&r=0" alt="Interior de um restaurante">
+                <span class="menu-item-text">restaurantes</span>
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'quiosques' %}" class="menu-item-v2">
+                <img src="https://th.bing.com/th/id/R.fb88eca3506eec0898b59c397bc80aa2?rik=OEU7IlXEfijcLQ&pid=ImgRaw&r=0" alt="Quiosques azuis">
+                <span class="menu-item-text">quiosques</span>
+            </a>
+        </li>
+        <li>
+            <a href="#promocoes" class="menu-item-v2 promo-item">
+                <div class="promo-icon">&#128227;</div>
+                <span class="menu-item-text">promoções</span>
+            </a>
+        </li>
+    </ul>
+</div>
+{% endblock %}

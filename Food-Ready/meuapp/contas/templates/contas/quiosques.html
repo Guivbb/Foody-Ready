@@ -1,0 +1,47 @@
+{% extends 'contas/base.html' %}
+{% load static %}
+
+{% block title %}Quiosques - Food Ready{% endblock %}
+
+{% block content %}
+<div class="quiosques-page">
+    <header class="quiosques-header">
+        <div class="top-bar">
+            <a href="#configuracoes" class="icon-link">&#9881;</a>
+            <a href="{% url 'menu' %}" class="icon-link">&#8962;</a>
+        </div>
+        <h1>Quiosques</h1>
+    </header>
+
+    <main>
+        <ul class="lista-quiosques-img">
+            <li class="quiosque-card-img" style="background-image: url('https://i.imgur.com/kYqU3yQ.jpeg');">
+                <a href="#"><span class="card-title">açaí</span></a>
+            </li>
+            <li class="quiosque-card-img" style="background-image: url('https://i.imgur.com/qLh5JdG.jpeg');">
+                <a href="#"><span class="card-title">salgados</span></a>
+            </li>
+            <li class="quiosque-card-img" style="background-image: url('https://i.imgur.com/pYxY13x.jpeg');">
+                <a href="#"><span class="card-title">Tapioca</span></a>
+            </li>
+            <li class="quiosque-card-img" style="background-image: url('https://i.imgur.com/z1rA2nI.jpeg');">
+                <a href="#"><span class="card-title">Massa</span></a>
+            </li>
+            <li class="quiosque-card-img" style="background-image: url('URL_DA_SUA_IMAGEM_AQUI');">
+                <a href="#"><span class="card-title">Strogonoff</span></a>
+            </li>
+        </ul>
+    </main>
+
+    <footer class="quiosques-footer">
+        <nav class="pagination">
+            <span>Pag</span>
+            <span class="page-active">1</span>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+        </nav>
+    </footer>
+</div>
+{% endblock %}

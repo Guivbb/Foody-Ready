@@ -1,0 +1,65 @@
+{% extends 'contas/base.html' %}
+{% load static %}
+
+{% block title %}Cardápio - Porto do Sabor{% endblock %}
+
+{% block content %}
+    <div class="porto-do-sabor-page">
+        <header class="pds-header">
+            <a href="{% url 'restaurantes' %}" class="icon-link" style="position: absolute; left: 20px;">&#8592;</a>
+            <h1>PORTO DO SABOR</h1>
+        </header>
+
+        <div class="pds-divider"></div>
+
+        <main class="pds-menu-container">
+            <h2 class="pds-menu-title">CARDÁPIO</h2>
+
+            <ul class="pds-menu-list">
+                <li class="pds-menu-item">
+                    <img class="pds-item-image" src="https://portodosabor.com.br/wp-content/uploads/2024/07/img-acai.jpg" alt="Açaí Tradicional">
+                    <div class="pds-item-info">
+                        <span class="pds-item-name">Açaí Tradicional</span>
+                        <span class="pds-item-price">A partir de R$24,00</span>
+                    </div>
+                    <div class="pds-item-action">
+                        <a href="#" class="pds-cart-icon">&#128722;</a>
+                    </div>
+                </li>
+
+                <li class="pds-menu-item">
+                    <img class="pds-item-image" src="https://media-cdn.tripadvisor.com/media/photo-s/1c/be/ab/a9/tapioca-e-suco-de-laranja.jpg" alt="Tapioca">
+                    <div class="pds-item-info">
+                        <span class="pds-item-name">Tapioca</span>
+                        <span class="pds-item-price">R$27,30</span>
+                    </div>
+                    <div class="pds-item-action">
+                        <a href="#" class="pds-cart-icon">&#128722;</a>
+                    </div>
+                </li>
+
+                <li class="pds-menu-item">
+                    <img class="pds-item-image" src="https://auroracultural.com/wp-content/uploads/2025/01/unnamed-143.jpg" alt="Croissant">
+                    <div class="pds-item-info">
+                        <span class="pds-item-name">Croissant</span>
+                        <span class="pds-item-price">R$13,90</span>
+                    </div>
+                    <div class="pds-item-action">
+                        <a href="#" class="pds-cart-icon">&#128722;</a>
+                    </div>
+                </li>
+
+                <li class="pds-menu-item">
+                    <img class="pds-item-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTJiYygBf5Bm2SLTZngfxgQV7_opuZ6clZbQ&s" alt="Torta de Frango Integral">
+                    <div class="pds-item-info">
+                        <span class="pds-item-name">Torta de Frango Integral</span>
+                        <span class="pds-item-price">R$31,40</span>
+                    </div>
+                    <div class="pds-item-action">
+                        <a href="#" class="pds-cart-icon">&#128722;</a>
+                    </div>
+                </li>
+            </ul>
+        </main>
+    </div>
+{% endblock %}

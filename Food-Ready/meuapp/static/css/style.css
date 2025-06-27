@@ -1,0 +1,910 @@
+/* ==========================================================================
+   Estilos Gerais e Comuns (Aplicados a todas as páginas)
+   ========================================================================== */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+}
+
+.container {
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #1A0D8D;
+    min-height: 100vh;
+    box-sizing: border-box;
+    color: white;
+}
+
+.container.full-width {
+    max-width: none;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.container.full-width .top-bar,
+.container.full-width header,
+.container.full-width footer {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon-link {
+    color: white;
+    text-decoration: none;
+    font-size: 28px;
+}
+
+header h1 {
+    margin-top: 10px;
+    margin-bottom: 25px;
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+}
+
+footer {
+    padding-top: 20px;
+}
+.pagination {
+    margin-top: 30px;
+    font-size: 18px;
+    text-align: left;
+}
+
+.pagination span,
+.pagination a {
+    margin-right: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.pagination .page-active {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.pagination a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   Estilos da Página de Menu (Versão Final com Ícones Grandes)
+   ========================================================================== */
+
+.menu-principal-container {
+    background-color: #1A0D8D;
+    padding: 30px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    color: white;
+    /* Adicionado para garantir que o flexbox do menu funcione bem */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.menu-header-v2 {
+    position: absolute; /* Fixa o cabeçalho no topo */
+    top: 30px;
+    left: 30px;
+}
+
+.settings-icon {
+    font-size: 32px;
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.menu-header-v2 h1 {
+    font-size: 42px;
+    margin: 0;
+    font-weight: bold;
+}
+
+/* Lista que alinha os 3 itens */
+.menu-list-v2 {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; /* Alinha os itens na vertical */
+    gap: 25px;
+}
+
+/* Cada um dos 3 quadrados do menu */
+.menu-item-v2 {
+    background-color: #3a3d90;
+    border-radius: 15px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    
+    /* Tamanho Fixo */
+    width: 200px;
+    height: 240px;
+
+    /* Layout interno para o conteúdo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Espaço entre o ícone e o texto */
+    transition: background-color 0.2s ease;
+}
+
+.menu-item-v2:hover {
+    background-color: #4a4e9e;
+}
+
+/* Ícones e imagens com tamanho aumentado */
+.menu-item-v2 img, .promo-icon {
+    height: 150px; /* AUMENTO SIGNIFICATIVO */
+    width: auto;
+    flex-shrink: 0;
+}
+
+.menu-item-v2 img {
+    object-fit: contain;
+}
+
+.promo-icon {
+    font-size: 120px; /* Ajuste fino para o ícone de texto */
+    line-height: 1.2;
+}
+
+.menu-item-text {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Fundo vermelho específico para o item de promoções */
+.promo-item {
+    background-color: #e53935;
+}
+
+.promo-item:hover {
+    background-color: #f45a57;
+}
+
+/* ==========================================================================
+   Estilos da Página de Login
+   ========================================================================== */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.split-header {
+    background-color: #1A0D8D;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.split-header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.split-screen-container {
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+}
+
+.split-panel {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.panel-left {
+    background-color: #1A0D8D;
+    color: #fff;
+}
+
+.panel-right {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.panel-content {
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+}
+
+.panel-content h2 {
+    font-size: 36px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.panel-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.panel-content .text-primary {
+    color: #1A0D8D;
+}
+
+.auth-form .form-group {
+    margin-bottom: 20px;
+}
+
+.auth-form input[type=text],
+.auth-form input[type=password],
+.auth-form input[type=email] {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background-color: #e0e0e0;
+}
+
+.panel-left .auth-form input {
+    background-color: rgba(255, 255, 255, .2);
+    color: #fff;
+}
+
+.panel-left .auth-form input::placeholder {
+    color: rgba(255, 255, 255, .7);
+}
+
+.auth-form .form-errors {
+    color: #ff4d4d;
+    font-size: 13px;
+    text-align: left;
+    margin-top: 5px;
+}
+
+.panel-left .form-errors {
+    color: #ff8a8a;
+}
+
+.auth-form .non-field-errors p {
+    font-size: 13px;
+    margin: 0;
+}
+
+.btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color .3s ease;
+}
+
+.btn-primary {
+    background-color: #0D0644;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #1f107e;
+}
+
+.btn-secondary {
+    background-color: #000;
+    color: #fff;
+    border-radius: 50px;
+}
+
+.btn-secondary:hover {
+    background-color: #333;
+}
+
+/* ==========================================================================
+   Estilos da Página de Restaurantes
+   ========================================================================== */
+.lista-restaurantes {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.container.full-width .lista-restaurantes {
+    gap: 0;
+}
+
+.lista-restaurantes li {
+    margin-bottom: 0;
+}
+
+.restaurante-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 8px;
+    min-height: 110px;
+    text-decoration: none;
+    transition: transform 0.2s ease-in-out;
+}
+
+.container.full-width .restaurante-card {
+    margin: 0 20px 15px 20px;
+    border-radius: 8px;
+}
+
+.restaurante-card:hover {
+    transform: scale(1.03);
+}
+
+.restaurante-card img {
+    max-width: 85%;
+    max-height: 85px;
+    height: auto;
+    object-fit: contain;
+}
+
+
+/* ==========================================================================
+   Estilos da Página de Detalhes LeMax (Versão Final)
+   ========================================================================== */
+
+/*
+ * Esta classe, usada no container da página LeMax, remove os limites
+ * de largura para criar o efeito de ecrã inteiro.
+ */
+.container.full-width-page {
+    max-width: none;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Adiciona um espaçamento lateral geral à página */
+.lemax-page {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/*
+ * Cabeçalho atualizado: centraliza o logo e posiciona
+ * a seta de voltar à esquerda, mesmo sem o ícone do carrinho.
+ */
+.lemax-header {
+    position: relative; /* Essencial para posicionar a seta */
+    text-align: center; /* Centraliza o logo */
+    padding: 10px 0;
+    margin-bottom: 20px;
+    height: 50px; /* Altura para garantir alinhamento vertical */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Posiciona a seta de voltar absolutamente à esquerda do cabeçalho */
+.lemax-header .icon-link {
+    position: absolute;
+    left: 0; 
+}
+
+.lemax-logo {
+    max-height: 50px;
+    width: auto;
+}
+
+/* Imagem principal do hambúrguer */
+.lemax-hero-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Título da categoria, como "Burgers" */
+.lemax-category {
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+/* Lista que contém os itens do menu */
+.lemax-menu-list {
+    margin-top: 20px;
+}
+
+/* Cada item individual do menu */
+.lemax-menu-item {
+    margin-bottom: 25px;
+}
+
+.lemax-menu-item .item-header {
+    display: flex;
+    align-items: baseline;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.lemax-menu-item .item-name,
+.lemax-menu-item .item-price {
+    white-space: nowrap;
+}
+
+.lemax-menu-item .item-line-separator {
+    width: 100%;
+    border-bottom: 2px dashed #ffffff;
+    margin: 0 8px;
+}
+
+.lemax-menu-item .item-description {
+    font-size: 15px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    color: #ffffff;
+    opacity: 0.9;
+}
+
+.lemax-menu-item .item-action {
+    text-align: right;
+    margin-top: 10px;
+}
+
+/* Estilo para o novo ícone de carrinho nos itens do menu */
+.lemax-cart-icon {
+    font-size: 32px;
+    color: #ffffff;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.lemax-cart-icon:hover {
+    opacity: 0.8;
+}
+
+/* ==========================================================================
+   Estilos da Página Rei do Mate (Versão Ecrã Inteiro com Logo)
+   ========================================================================== */
+
+/* Garante que não haja margens no corpo da página */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Define o fundo branco para a página e garante que ocupe a altura mínima do ecrã */
+.rei-do-mate-page {
+    background-color: #ffffff;
+    min-height: 100vh;
+}
+
+/* Cabeçalho verde claro que ocupa toda a largura */
+.rdm-header {
+    background-color: #008744; /* Verde mais claro do topo */
+    color: white;
+    padding: 10px;
+    text-align: center;
+    /* Adicionado para ajudar no alinhamento da seta de voltar */
+    position: relative; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px; /* Altura fixa para o cabeçalho */
+}
+
+/* Estilo para o logo no cabeçalho da página Rei do Mate */
+.rdm-header-logo {
+    height: 40px;  /* Define a altura do logo */
+    width: auto;   /* A largura se ajusta automaticamente */
+    vertical-align: middle;
+}
+
+/* Linha divisória verde escura, como no figma */
+.rdm-divider {
+    height: 8px;
+    background-color: #004d2b; /* Verde escuro */
+}
+
+/* Container principal do menu, agora sem margens ou bordas */
+.rdm-menu-container {
+    padding: 20px 25px; /* Mantém o espaçamento interno */
+}
+
+/* Título "CARDÁPIO" */
+.rdm-menu-title {
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: black;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+/* Lista que agrupa todos os itens do menu */
+.rdm-menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Cada linha de item do menu (imagem, texto, ícone) */
+.rdm-menu-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px; /* Espaço entre os itens */
+}
+
+/* Imagem circular do produto */
+.rdm-item-image {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0; /* Impede que a imagem encolha */
+}
+
+/* Div que contém o nome e o preço */
+.rdm-item-info {
+    flex-grow: 1; /* Faz esta div ocupar o espaço disponível */
+    margin-left: 15px;
+    color: black;
+}
+
+.rdm-item-name {
+    display: block;
+    font-size: 16px;
+}
+
+.rdm-item-price {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* Div que contém o ícone do carrinho */
+.rdm-item-action {
+    margin-left: 15px;
+}
+
+/* Estilo do ícone do carrinho de compras */
+.rdm-cart-icon {
+    font-size: 32px;
+    color: #888;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.rdm-cart-icon:hover {
+    color: #004d2b;
+}
+
+/* ==========================================================================
+   Estilos da Página Porto do Sabor (Versão Ecrã Inteiro)
+   ========================================================================== */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Container principal da página */
+.porto-do-sabor-page {
+    background-color: #ffffff;
+    min-height: 100vh;
+}
+
+/* Cabeçalho roxo/vinho que ocupa toda a largura */
+.pds-header {
+    background-color: #5A0E2D; /* Cor do figma */
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: relative; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+}
+
+.pds-header h1 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Linha divisória roxa/vinho */
+.pds-divider {
+    height: 8px;
+    background-color: #5A0E2D; /* Cor do figma */
+}
+
+/* Container do menu */
+.pds-menu-container {
+    padding: 20px 25px;
+}
+
+/* Título "CARDÁPIO" */
+.pds-menu-title {
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: black;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+/* Lista dos itens do menu */
+.pds-menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Cada item da lista */
+.pds-menu-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+/* Imagem do produto */
+.pds-item-image {
+    width: 80px;
+    height: 80px;
+    object-fit: contain; /* Usar 'contain' para mostrar a imagem inteira */
+    flex-shrink: 0;
+}
+
+/* Informações do item (nome e preço) */
+.pds-item-info {
+    flex-grow: 1;
+    margin-left: 15px;
+    color: black;
+}
+
+.pds-item-name {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.pds-item-price {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* Ação (ícone do carrinho) */
+.pds-item-action {
+    margin-left: 15px;
+}
+
+.pds-cart-icon {
+    font-size: 32px;
+    color: #888;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.pds-cart-icon:hover {
+    color: #5A0E2D;
+}
+
+/* ==========================================================================
+   Estilos da Página Megamatte (Versão Ecrã Inteiro)
+   ========================================================================== */
+
+/* Container principal da página */
+.megamatte-page {
+    background-color: #ffffff;
+    min-height: 100vh;
+}
+
+/* Cabeçalho laranja que ocupa toda a largura */
+.mm-header {
+    background-color: #F58220; /* Cor laranja do figma */
+    padding: 10px;
+    text-align: center;
+    position: relative; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+}
+
+.mm-header-logo {
+    height: 60px; /* Altura do logo */
+    width: auto;
+}
+
+/* Linha divisória laranja */
+.mm-divider {
+    height: 8px;
+    background-color: #F58220; /* Cor laranja do figma */
+}
+
+/* Container do menu */
+.mm-menu-container {
+    padding: 20px 25px;
+}
+
+/* Título "CARDÁPIO" */
+.mm-menu-title {
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: black;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+/* Lista dos itens do menu */
+.mm-menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Cada item da lista */
+.mm-menu-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    gap: 15px; /* Espaço entre os elementos */
+}
+
+/* Imagem do produto */
+.mm-item-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px; /* Cantos levemente arredondados */
+    flex-shrink: 0;
+}
+
+/* Informações do item (nome e preço) */
+.mm-item-info {
+    flex-grow: 1;
+    color: black;
+}
+
+.mm-item-name {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.mm-item-price {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+
+.mm-cart-icon {
+    font-size: 32px;
+    color: #888;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.mm-cart-icon:hover {
+    color: #F58220;
+}
+
+/* ==========================================================================
+   Estilos da Página Quiosques (Layout com Imagens Editáveis)
+   ========================================================================== */
+
+/* Container principal da página */
+.quiosques-page {
+    background-color: #1A0D8D; /* Cor de fundo azul escuro */
+    color: white;
+    min-height: 100vh;
+}
+
+.quiosques-header, .quiosques-footer {
+    padding: 0 20px;
+}
+
+.quiosques-header h1 {
+    margin-top: 10px;
+    margin-bottom: 25px;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+/* Lista que organiza os cards */
+.lista-quiosques-img {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Estilo de cada card */
+.quiosque-card-img {
+    position: relative;
+    height: 180px; /* Altura de cada card */
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.2s ease;
+}
+
+.quiosque-card-img:hover {
+    transform: scale(1.02); /* Efeito de zoom suave */
+}
+
+/* Link que cobre todo o card para ser clicável */
+.quiosque-card-img a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-decoration: none;
+}
+
+/* Camada escura sobre a imagem para o texto ficar legível */
+.quiosque-card-img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 100%);
+    border-radius: inherit; /* Herda o arredondamento se houver */
+}
+
+/* Título de texto sobre a imagem */
+.quiosque-card-img .card-title {
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 1);
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+}
+
+/* Rodapé com a paginação */
+.quiosques-footer {
+    padding-top: 30px;
+    padding-bottom: 20px;
+}

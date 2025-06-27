@@ -1,0 +1,61 @@
+{% extends 'contas/base.html' %}
+{% load static %}
+
+{% block title %}Restaurantes - Food Ready{% endblock %}
+
+{% block content %}
+<div class="container full-width">
+    <header>
+        <div class="top-bar">
+            <a href="{% url 'menu' %}" class="icon-link">&#9881;</a>
+            <a href="{% url 'menu' %}" class="icon-link">&#8962;</a>
+        </div>
+        <h1>Restaurantes</h1>
+    </header>
+
+    <main>
+        <ul class="lista-restaurantes">
+            <li>
+                {# Link para LeMax #}
+                <a href="{% url 'lemax_detail' %}" class="restaurante-card" style="background-color: #E63026;">
+                    <img src="https://www.lemaxhamburgueria.com.br/wp-content/uploads/2021/06/lemax-hamburgeria-logo-branco.png" alt="Logo LeMax Hamburgueria" style="max-width: 200px;">
+                </a>
+            </li>
+            <li>
+                {# Link para Megamatte #}
+                <a href="{% url 'megamatte_detail' %}" class="restaurante-card" style="background-color: #FF7A00;">
+                    <img src="https://megafranquia.com.br/wp-content/uploads/2025/04/Logo-Megamatte-1.webp" alt="Logo Megamatte" style="max-width: 220px;">
+                </a>
+            </li>
+            <li>
+                {# Link para Rei do Mate #}
+                <a href="{% url 'rei_do_mate_detail' %}" class="restaurante-card" style="background-color: #72f805;">
+                    <img src="https://www.gcom.com.br/ImagesAppGcom/logo-reidomate-2.png" alt="Logo Rei do Mate" style="max-width: 200px;">
+                </a>
+            </li>
+             <li>
+                {# Link para Porto do Sabor #}
+                <a href="{% url 'porto_do_sabor_detail' %}" class="restaurante-card" style="background-color: #ffffff;">
+                    <img src="https://vmarkethomol.com.br/app/vmarket-core/view/cms2/portodosabor/images/logo-portodosabor.png" alt="Logo Porto do Sabor" style="max-width: 210px;">
+                </a>
+            </li>
+            <li>
+                {# Link para Spoleto (ainda por fazer) #}
+                <a href="#" class="restaurante-card" style="background-color: #ffffff;">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiF8BNo9wY6R29TstqYqo_dDPjXv5gpoOnfQ&s" alt="Logo Spoleto" style="max-width: 180px;">
+                </a>
+            </li>
+        </ul>
+    </main>
+
+    <footer>
+        <nav class="pagination">
+            <span class="page-active">1</span>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+        </nav>
+    </footer>
+</div>
+{% endblock %}

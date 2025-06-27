@@ -1,0 +1,65 @@
+{% extends 'contas/base.html' %}
+{% load static %}
+
+{% block title %}Cardápio - Megamatte{% endblock %}
+
+{% block content %}
+    <div class="megamatte-page">
+        <header class="mm-header">
+            <a href="{% url 'restaurantes' %}" class="icon-link" style="position: absolute; left: 20px; color: #444;">&#8592;</a>
+            <img class="mm-header-logo" src="https://megafranquia.com.br/wp-content/uploads/2025/04/Logo-Megamatte-1.webp" alt="Logo Megamatte">
+        </header>
+
+        <div class="mm-divider"></div>
+
+        <main class="mm-menu-container">
+            <h2 class="mm-menu-title">CARDÁPIO</h2>
+
+            <ul class="mm-menu-list">
+                <li class="mm-menu-item">
+                    <img class="mm-item-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPE-cUqKtxEOrqRyx1SU7YAyzfnqFuVdm9HQ&s" alt="Folhados">
+                    <div class="mm-item-info">
+                        <span class="mm-item-name">Folhados</span>
+                        <span class="mm-item-price">R$15,90</span>
+                    </div>
+                    <div class="mm-item-action">
+                        <a href="#" class="mm-cart-icon">&#128722;</a>
+                    </div>
+                </li>
+
+                <li class="mm-menu-item">
+                    <img class="mm-item-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPs4wZDFheumpNEi9r8ut7JBpLN2Y25-8fAg&s" alt="Porção com 12 Pães de Queijo">
+                    <div class="mm-item-info">
+                        <span class="mm-item-name">Porção com 12 Pães de Queijo</span>
+                        <span class="mm-item-price">R$18,90</span>
+                    </div>
+                    <div class="mm-item-action">
+                        <a href="#" class="mm-cart-icon">&#128722;</a>
+                    </div>
+                </li>
+
+                <li class="mm-menu-item">
+                    <img class="mm-item-image" src="https://static-images.ifood.com.br/pratos/10d36323-7a43-4f22-8aa2-933c6e2260cf/202001240251_7rVl_m.jpg" alt="Açaí Batido">
+                    <div class="mm-item-info">
+                        <span class="mm-item-name">Açaí - Batido c/ Morango ou Banana</span>
+                        <span class="mm-item-price">R$24,90</span>
+                    </div>
+                    <div class="mm-item-action">
+                        <a href="#" class="mm-cart-icon">&#128722;</a>
+                    </div>
+                </li>
+
+                <li class="mm-menu-item">
+                    <img class="mm-item-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX5iA9vSbbYVydxLErGKQ7kH4NL59_upH27w&s" alt="Combo Pão de Queijo e Mate">
+                    <div class="mm-item-info">
+                        <span class="mm-item-name">Combo Pão de Queijo 12 un + Mate ou Guaraná 500ml</span>
+                        <span class="mm-item-price">R$43,40</span>
+                    </div>
+                    <div class="mm-item-action">
+                        <a href="#" class="mm-cart-icon">&#128722;</a>
+                    </div>
+                </li>
+            </ul>
+        </main>
+    </div>
+{% endblock %}

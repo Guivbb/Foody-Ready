@@ -1,0 +1,64 @@
+{% extends 'contas/base.html' %}
+{% load static %}
+
+{% block title %}LeMax Hamburgueria - Food Ready{% endblock %}
+
+{% block content %}
+{# O fundo vermelho e a classe de ecrã inteiro são aplicados aqui #}
+<div class="container lemax-page full-width-page" style="background-color: #E63026;">
+
+    <div class="lemax-header">
+        <a href="{% url 'restaurantes' %}" class="icon-link">&#8592;</a> {# Seta para voltar #}
+        <img src="https://www.lemaxhamburgueria.com.br/wp-content/uploads/2021/06/lemax-hamburgeria-logo-branco.png" alt="Logo LeMax" class="lemax-logo">
+        <a href="#" class="cart-icon-link">&#128722;</a> {# Ícone do carrinho #}
+    </div>
+
+    <main>
+        {# Nova imagem que você forneceu #}
+        <img class="lemax-hero-image" src="https://img.restaurantguru.com/rd5f-LeMax-Hamburgueria-Puc-Rio-Gavea-burger.jpg" alt="Hamburguer LeMax">
+        
+        <h2 class="lemax-category">Burgers</h2>
+
+        <div class="lemax-menu-list">
+            <div class="lemax-menu-item">
+                <div class="item-header">
+                    <span class="item-name">LeMax Clássico</span>
+                    <span class="item-line-separator"></span>
+                    <span class="item-price">R$35</span>
+                </div>
+                <p class="item-description">Pão, carne de 180g, queijo, alface, tomate e molho especial.</p>
+                <div class="item-action">
+                    {# Botão "Adicionar" substituído pelo ícone do carrinho #}
+                    <a href="#" class="lemax-cart-icon">&#128722;</a>
+                </div>
+            </div>
+
+            <div class="lemax-menu-item">
+                <div class="item-header">
+                    <span class="item-name">LeMax Duplo</span>
+                    <span class="item-line-separator"></span>
+                    <span class="item-price">R$45</span>
+                </div>
+                <p class="item-description">Pão, duas carnes de 180g, queijo duplo, picles e molho da casa.</p>
+                <div class="item-action">
+                    {# Botão "Adicionar" substituído pelo ícone do carrinho #}
+                    <a href="#" class="lemax-cart-icon">&#128722;</a>
+                </div>
+            </div>
+
+            <div class="lemax-menu-item">
+                <div class="item-header">
+                    <span class="item-name">LeMax Vegano</span>
+                    <span class="item-line-separator"></span>
+                    <span class="item-price">R$38</span>
+                </div>
+                <p class="item-description">Pão vegano, burger à base de plantas, queijo vegano e salada.</p>
+                 <div class="item-action">
+                    {# Botão "Adicionar" substituído pelo ícone do carrinho #}
+                    <a href="#" class="lemax-cart-icon">&#128722;</a>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+{% endblock %}
