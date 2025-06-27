@@ -13,20 +13,26 @@
     <main class="carrinho-container">
         
         <section class="order-summary">
-            <h2 class="restaurant-name">Nome do Restaurante</h2>
+            {# No futuro, podemos passar o nome do restaurante também #}
+            <h2 class="restaurant-name">Resumo do Pedido</h2>
             
             <div class="summary-details">
+                {# Loop para mostrar cada item do carrinho #}
+                {% for nome, detalhes in carrinho.items %}
                 <div class="summary-row">
-                    <span>Nome do item (2)</span>
-                    <span>R$20,00</span>
+                    <span>{{ nome }} ({{ detalhes.quantidade }}x)</span>
+                    <span>R${{ detalhes.preco|floatformat:2 }}</span>
                 </div>
+                {% empty %}
                 <div class="summary-row">
-                    <span>Quantidade</span>
-                    <span>2</span>
+                    <span>O seu carrinho está vazio.</span>
                 </div>
+                {% endfor %}
+
+                {# Mostra o total calculado na view #}
                 <div class="summary-row total-row">
                     <strong>Total</strong>
-                    <strong>R$40,00</strong>
+                    <strong>R${{ total_carrinho|floatformat:2 }}</strong>
                 </div>
             </div>
         </section>
