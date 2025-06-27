@@ -7,7 +7,7 @@
     <div class="megamatte-page">
         <header class="mm-header">
             <a href="{% url 'restaurantes' %}" class="icon-link" style="position: absolute; left: 20px; color: #444;">&#8592;</a>
-            <img class="mm-header-logo" src="https://megafranquia.com.br/wp-content/uploads/2025/04/Logo-Megamatte-1.webp" alt="Logo Megamatte">
+            <img class="mm-header-logo" src="https://logodownload.org/wp-content/uploads/2021/11/megamatte-logo.png" alt="Logo Megamatte">
         </header>
 
         <div class="mm-divider"></div>
@@ -17,46 +17,46 @@
 
             <ul class="mm-menu-list">
                 <li class="mm-menu-item">
-                    <img class="mm-item-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPE-cUqKtxEOrqRyx1SU7YAyzfnqFuVdm9HQ&s" alt="Folhados">
+                    <img class="mm-item-image" src="https://www.receiteria.com.br/wp-content/uploads/receitas-de-folhado-de-queijo-e-presunto-730x449.jpeg" alt="Folhados">
                     <div class="mm-item-info">
                         <span class="mm-item-name">Folhados</span>
                         <span class="mm-item-price">R$15,90</span>
                     </div>
                     <div class="mm-item-action">
-                        <a href="#" class="mm-cart-icon">&#128722;</a>
+                        <a href="{% url 'add_carrinho' produto_nome='Folhado' produto_preco='15.90' %}" class="mm-cart-icon">&#128722;</a>
                     </div>
                 </li>
 
                 <li class="mm-menu-item">
-                    <img class="mm-item-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPs4wZDFheumpNEi9r8ut7JBpLN2Y25-8fAg&s" alt="Porção com 12 Pães de Queijo">
+                    <img class="mm-item-image" src="https://assets.delirec.com/images%2FzzgI2B3FpT8A00aB7a2P%2Fpao-de-queijo-mineiro-0-1611082695.jpg" alt="Porção com 12 Pães de Queijo">
                     <div class="mm-item-info">
                         <span class="mm-item-name">Porção com 12 Pães de Queijo</span>
                         <span class="mm-item-price">R$18,90</span>
                     </div>
                     <div class="mm-item-action">
-                        <a href="#" class="mm-cart-icon">&#128722;</a>
+                        <a href="{% url 'add_carrinho' produto_nome='Porção Pão de Queijo' produto_preco='18.90' %}" class="mm-cart-icon">&#128722;</a>
                     </div>
                 </li>
 
                 <li class="mm-menu-item">
-                    <img class="mm-item-image" src="https://static-images.ifood.com.br/pratos/10d36323-7a43-4f22-8aa2-933c6e2260cf/202001240251_7rVl_m.jpg" alt="Açaí Batido">
+                    <img class="mm-item-image" src="https://www.reidomate.com.br/wp-content/uploads/2023/10/2_acai-com-frutas-vermelhas.png" alt="Açaí Batido">
                     <div class="mm-item-info">
                         <span class="mm-item-name">Açaí - Batido c/ Morango ou Banana</span>
                         <span class="mm-item-price">R$24,90</span>
                     </div>
                     <div class="mm-item-action">
-                        <a href="#" class="mm-cart-icon">&#128722;</a>
+                        <a href="{% url 'add_carrinho' produto_nome='Açaí Batido' produto_preco='24.90' %}" class="mm-cart-icon">&#128722;</a>
                     </div>
                 </li>
 
                 <li class="mm-menu-item">
-                    <img class="mm-item-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX5iA9vSbbYVydxLErGKQ7kH4NL59_upH27w&s" alt="Combo Pão de Queijo e Mate">
+                    <img class="mm-item-image" src="https://media-cdn.tripadvisor.com/media/photo-s/17/7d/5a/8f/combo-pao-de-queijo-e.jpg" alt="Combo Pão de Queijo e Mate">
                     <div class="mm-item-info">
                         <span class="mm-item-name">Combo Pão de Queijo 12 un + Mate ou Guaraná 500ml</span>
                         <span class="mm-item-price">R$43,40</span>
                     </div>
                     <div class="mm-item-action">
-                        <a href="#" class="mm-cart-icon">&#128722;</a>
+                        <a href="{% url 'add_carrinho' produto_nome='Combo Pão de Queijo + Mate' produto_preco='43.40' %}" class="mm-cart-icon">&#128722;</a>
                     </div>
                 </li>
             </ul>
