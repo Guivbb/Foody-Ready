@@ -908,3 +908,105 @@ body {
     padding-top: 30px;
     padding-bottom: 20px;
 }
+/* ==========================================================================
+   Estilos da Página do Carrinho
+   ========================================================================== */
+
+/* Container principal da página com fundo cinza claro */
+.carrinho-page {
+    background-color: #f7f7f7;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+/* Cabeçalho azul escuro */
+.carrinho-header {
+    background-color: #1A0D8D;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrinho-header h1 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Container para o conteúdo principal */
+.carrinho-container {
+    padding: 25px;
+}
+
+/* Secção do resumo do pedido */
+.order-summary {
+    background-color: #eeeeee;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.restaurant-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin: 0 0 20px 0;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.total-row {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+}
+
+/* Secção das formas de pagamento */
+.payment-methods .section-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.payment-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.payment-button {
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.payment-button:hover {
+    background-color: #d0d0d0;
+}
+
+.payment-button:active {
+    transform: scale(0.98);
+}
