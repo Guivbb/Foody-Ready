@@ -67,6 +67,29 @@ def porto_do_sabor_detail_view(request):
 def megamatte_detail_view(request):
     return render(request, 'contas/megamatte_detail.html')
 
-@login_required
+def add_carrinho_view(request, produto_nome, produto_preco):
+    carrinho = request.session.get('carrinho', {})
+    produto_preco = float(produto_preco.replace(',', '.'))
+    if produto_nome in carrinho:
+        carrinho[produto_nome]['quantidade'] += 1
+    else:
+        carrinho[produto_nome] = {
+            'preco': produto_preco,
+            'quantidade': 1
+        }
+    request.session['carrinho'] = carrinho
+    request.session.modified = True
+    return redirect('carrinho')
+
 def carrinho_view(request):
-    return render(request, 'contas/carrinho.html')
+    carrinho = request.session.get('carrinho', {})
+    total_carrinho = 0
+    for item in carrinho.values():
+        total_carrinho += item['preco'] * item['quantidade']
+
+    context = {
+        'carrinho': carrinho,
+        'total_carrinho': total_carrinho
+    }
+    return render(request, 'contas/carrinho.html', context)
+
