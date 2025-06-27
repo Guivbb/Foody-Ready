@@ -13,4 +13,5 @@ urlpatterns = [
     path('rei-do-mate/', views.rei_do_mate_detail_view, name='rei_do_mate_detail'),
     path('porto-do-sabor/', views.porto_do_sabor_detail_view, name='porto_do_sabor_detail'),
     path('megamatte/', views.megamatte_detail_view, name='megamatte_detail'),
+    path('carrinho/', views.carrinho_view, name='carrinho'),
 ]
