@@ -1,0 +1,46 @@
+{% extends 'contas/base.html' %}
+{% load static %}
+
+{% block title %}Carrinho de Compras{% endblock %}
+
+{% block content %}
+<div class="carrinho-page">
+    <header class="carrinho-header">
+        <a href="javascript:history.back()" class="icon-link" style="position: absolute; left: 20px;">&#8592;</a>
+        <h1>Pagamento</h1>
+    </header>
+
+    <main class="carrinho-container">
+        
+        <section class="order-summary">
+            <h2 class="restaurant-name">Nome do Restaurante</h2>
+            
+            <div class="summary-details">
+                <div class="summary-row">
+                    <span>Nome do item (2)</span>
+                    <span>R$20,00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Quantidade</span>
+                    <span>2</span>
+                </div>
+                <div class="summary-row total-row">
+                    <strong>Total</strong>
+                    <strong>R$40,00</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="payment-methods">
+            <h2 class="section-title">Forma de Pagamento</h2>
+            <div class="payment-grid">
+                <button type="button" class="payment-button">Pix</button>
+                <button type="button" class="payment-button">Cartão de Crédito</button>
+                <button type="button" class="payment-button">Dinheiro</button>
+                <button type="button" class="payment-button">Cartão de Débito</button>
+            </div>
+        </section>
+
+    </main>
+</div>
+{% endblock %}
