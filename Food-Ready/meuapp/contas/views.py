@@ -66,3 +66,7 @@ def porto_do_sabor_detail_view(request):
 @login_required
 def megamatte_detail_view(request):
     return render(request, 'contas/megamatte_detail.html')
+
+@login_required
+def carrinho_view(request):
+    return render(request, 'contas/carrinho.html')
