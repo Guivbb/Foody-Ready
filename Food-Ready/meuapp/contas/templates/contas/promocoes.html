@@ -1,0 +1,53 @@
+{% extends 'contas/base.html' %}
+{% load static %}
+
+{% block title %}Promoções Especiais{% endblock %}
+
+{% block content %}
+<div class="promo-page">
+    <header class="promo-header">
+        <a href="{% url 'menu' %}" class="promo-back-link">&#8592;</a>
+        <h1>Promoções</h1>
+    </header>
+
+    <main class="promo-container">
+        
+        <div class="promo-card">
+            <div class="promo-tag">COMBO DO DIA</div>
+            <img src="https://minhareceita.com.br/app/uploads/2021/03/shutterstock_1751836019-scaled.jpg" alt="Hambúrguer e Batata" class="promo-image">
+            <div class="promo-details">
+                <h2 class="promo-title">LeMax Clássico + Fritas</h2>
+                <p class="promo-description">
+                    O combo perfeito para matar sua fome! Nosso hambúrguer clássico acompanhado de uma porção de fritas crocantes.
+                </p>
+                <div class="promo-pricing">
+                    <span class="promo-original-price">De R$ 42,00</span>
+                    <span class="promo-new-price">Por R$ 37,99</span>
+                </div>
+                <a href="{% url 'add_carrinho' produto_nome='Combo LeMax Clássico' produto_preco='37.99' %}" class="promo-action-button">
+                    Aproveitar Oferta
+                </a>
+            </div>
+        </div>
+
+        <div class="promo-card">
+            <div class="promo-tag">AÇAÍ EM DOBRO</div>
+            <img src="https://tse1.mm.bing.net/th/id/OIP.NXK4ab6XJIca3R8PTON65AHaFj?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Açaí" class="promo-image">
+            <div class="promo-details">
+                <h2 class="promo-title">Compre 1 Açaí Médio e Leve Outro</h2>
+                <p class="promo-description">
+                    Traga um amigo e aproveite! Na compra de um açaí médio do Jhonny, o segundo é por nossa conta.
+                </p>
+                <div class="promo-pricing">
+                    <span class="promo-original-price">De R$ 28,00</span>
+                    <span class="promo-new-price">Por R$ 14,00</span>
+                </div>
+                <a href="{% url 'add_carrinho' produto_nome='Promo Açaí em Dobro' produto_preco='14.00' %}" class="promo-action-button">
+                    Quero Dobrado
+                </a>
+            </div>
+        </div>
+
+    </main>
+</div>
+{% endblock %}
