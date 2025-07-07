@@ -908,105 +908,1056 @@ body {
     padding-top: 30px;
     padding-bottom: 20px;
 }
+
 /* ==========================================================================
-   Estilos da Página do Carrinho
+   NOVA ESTÉTICA: Carrinho e Pagamento (Clean & Modern)
    ========================================================================== */
 
-/* Container principal da página com fundo cinza claro */
-.carrinho-page {
-    background-color: #f7f7f7;
+/* --- Base da Página --- */
+.checkout-page {
+    background-color: #f7f8fa; /* Um cinza bem claro para o fundo */
     min-height: 100vh;
     font-family: Arial, sans-serif;
 }
 
-/* Cabeçalho azul escuro */
-.carrinho-header {
+.checkout-header {
+    background-color: #ffffff;
+    padding: 15px 20px;
+    border-bottom: 1px solid #e8e8e8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.checkout-header .back-link {
+    position: absolute;
+    left: 20px;
+    color: #333;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.checkout-header .header-title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #1A0D8D; /* Cor primária no título */
+}
+
+.checkout-container {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto; /* Centraliza o conteúdo principal */
+}
+
+/* --- Card de Resumo --- */
+.summary-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 25px;
+}
+
+.summary-card .card-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin: 0 0 20px 0;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+/* --- Itens do Carrinho --- */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-item-name {
+    font-weight: 600;
+    font-size: 16px;
+    color: #333;
+}
+
+.cart-item-price {
+    font-size: 14px;
+    color: #666;
+    margin-top: 4px;
+}
+
+.cart-item-quantity {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.cart-item-quantity .quantity-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background-color: #f7f8fa;
+    border: 1px solid #e8e8e8;
+    color: #1A0D8D;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.cart-item-quantity .quantity-btn:hover {
+    background-color: #e8e8e8;
+}
+
+.cart-item-quantity .quantity-text {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+/* --- Seção de Total --- */
+.total-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-top: 20px;
+    margin-top: 10px;
+}
+
+.total-label {
+    font-size: 18px;
+    font-weight: 600;
+    color: #555;
+}
+
+.total-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1A0D8D;
+}
+
+/* --- Opções de Pagamento --- */
+.payment-options .card-title {
+    margin-bottom: 15px;
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    background-color: #f7f8fa;
+    border: 1px solid #e8e8e8;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #333;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.payment-option:hover {
+    border-color: #1A0D8D;
+    background-color: #f0f2ff;
+}
+
+.payment-option-icon {
+    width: 32px;
+    margin-right: 15px;
+}
+
+.payment-option-name {
+    flex-grow: 1;
+    font-weight: 600;
+}
+
+.payment-option-arrow {
+    font-size: 22px;
+    color: #aaa;
+}
+
+
+/* --- Botões de Ação --- */
+.action-button-container {
+    padding: 10px 0;
+}
+
+.action-button {
+    display: block;
+    width: 100%;
+    padding: 18px;
     background-color: #1A0D8D;
     color: white;
-    padding: 15px;
     text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.action-button:hover {
+    background-color: #2c3e8f;
+    transform: scale(1.02);
+}
+
+/* --- Mensagem de Carrinho Vazio --- */
+.empty-cart-container {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.empty-cart-icon {
+    font-size: 60px;
+    color: #cccccc;
+}
+
+.empty-cart-text {
+    font-size: 18px;
+    color: #666;
+    margin: 20px 0;
+}
+/* ==========================================================================
+   Estilos da Página Na Medida
+   ========================================================================== */
+
+/* Importa uma fonte cursiva elegante do Google Fonts para o título */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+.na-medida-page {
+    background-color: #222222; /* Fundo escuro */
+    min-height: 100vh;
+    padding: 30px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.nm-back-link {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    color: white;
+    font-size: 28px;
+    text-decoration: none;
+    z-index: 10;
+}
+
+.nm-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.nm-header-title {
+    font-family: 'Great Vibes', cursive; /* Fonte cursiva especial */
+    color: white;
+    font-size: 5rem; /* Tamanho grande para o título */
+    font-weight: normal;
+    margin: 0;
+}
+
+.nm-menu-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 10px 30px;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+}
+
+.nm-menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nm-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 25px 0;
+    border-bottom: 1px solid #eeeeee; /* Linha sutil para separar itens */
+}
+
+.nm-menu-item:last-child {
+    border-bottom: none; /* Remove a linha do último item */
+}
+
+.nm-item-image {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.nm-item-info {
+    flex-grow: 1; /* Faz esta div ocupar o espaço restante */
+}
+
+.nm-item-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.nm-item-price {
+    font-size: 1.1rem;
+    color: #555;
+    margin-top: 8px;
+}
+
+.nm-item-action {
+    margin-left: auto; /* Empurra o botão do carrinho para a direita */
+    padding-left: 20px;
+}
+
+.nm-cart-link {
+    font-size: 2rem;
+    color: #1A0D8D; /* Cor primária do seu projeto */
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.nm-cart-link:hover {
+    transform: scale(1.1);
+}
+/* ==========================================================================
+   Estilos da Página Quiosque Strogonoff
+   ========================================================================== */
+
+.strogonoff-page {
+    background-color: #004d2b; /* Fundo verde escuro */
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.sg-header {
+    background-color: #008744; /* Verde mais claro */
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    position: relative; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sg-header h1 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.sg-back-link {
+    position: absolute;
+    left: 20px;
+    color: white;
+    font-size: 28px;
+    text-decoration: none;
+}
+
+.sg-divider {
+    height: 8px;
+    background-color: #004d2b; /* Verde escuro igual ao fundo */
+}
+
+.sg-menu-card {
+    background-color: white;
+    margin: 30px;
+    padding: 20px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.sg-card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.sg-card-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 25px;
+}
+
+.sg-menu-section {
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.sg-section-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.sg-options-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sg-menu-option {
+    display: flex;
+    justify-content: space-between; /* Alinha item à esquerda e carrinho à direita */
+    align-items: center;
+    padding: 10px 5px;
+    font-size: 1.1rem;
+    color: #333;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.sg-menu-option:last-child {
+    border-bottom: none;
+}
+
+.sg-cart-link {
+    font-size: 1.8rem;
+    color: #008744; /* Verde para combinar */
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.sg-cart-link:hover {
+    transform: scale(1.1);
+}
+/* ==========================================================================
+   Estilos da Página Açaí do Jhonny
+   ========================================================================== */
+
+.acai-jhonny-page {
+    background-color: #3d0f3d; /* Roxo escuro para o fundo da página */
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.aj-header {
+    background-color: #5A0E2D; /* Roxo/Vinho mais claro para o cabeçalho */
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    position: relative; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aj-header h1 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.aj-back-link {
+    position: absolute;
+    left: 20px;
+    color: white;
+    font-size: 28px;
+    text-decoration: none;
+}
+
+.aj-divider {
+    height: 4px;
+    background-color: #3d0f3d; /* Cor de fundo da página */
+}
+
+.aj-menu-container {
+    padding: 30px;
+}
+
+.aj-menu-card {
+    background-color: white;
+    border: 4px solid #005f9e; /* Borda azul do figma */
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+}
+
+.aj-card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.aj-card-image {
+    width: 150px;
+    height: auto;
+    margin-bottom: 25px;
+}
+
+.aj-options-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left; /* Alinha o texto dos itens à esquerda */
+}
+
+.aj-menu-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.aj-menu-option:last-child {
+    border-bottom: none;
+}
+
+.aj-item-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.aj-item-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.aj-item-price {
+    font-size: 1.1rem;
+    color: #555;
+    margin-top: 5px;
+}
+
+.aj-cart-link {
+    font-size: 1.8rem;
+    color: #5A0E2D; /* Cor do cabeçalho */
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.aj-cart-link:hover {
+    transform: scale(1.1);
+}
+/* ==========================================================================
+   Estilos da Página de Configurações
+   ========================================================================== */
+
+.config-page {
+    background-color: #1A0D8D; /* Cor primária azul */
+    color: white;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.config-header {
+    padding: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.config-header h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0;
+    flex-grow: 1; /* Faz o título ocupar espaço e centralizar */
+    text-align: left;
+    padding-left: 50px; /* Espaço para o botão de voltar não sobrepor */
+}
+
+.config-back-link {
+    position: absolute;
+    left: 20px;
+    color: white;
+    font-size: 28px;
+    text-decoration: none;
+}
+
+.config-container {
+    padding: 0 20px;
+}
+
+.config-options-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.config-option-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3a3d90;
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.config-option-link:hover {
+    background-color: #4a4e9e;
+    transform: scale(1.02);
+}
+
+.config-option-arrow {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+/* ==========================================================================
+   Estilos da Página de Promoções
+   ========================================================================== */
+
+.promo-page {
+    background: linear-gradient(to bottom, #444444, #222222);
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    padding-bottom: 30px;
+}
+
+.promo-header {
+    padding: 20px;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.carrinho-header h1 {
+.promo-header h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
     margin: 0;
-    font-size: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.promo-back-link {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 28px;
+    text-decoration: none;
+}
+
+.promo-container {
+    padding: 0 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.promo-card {
+    background-color: white;
+    border-radius: 12px;
+    margin-top: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden; /* Garante que a tag não saia para fora */
+    position: relative;
+}
+
+.promo-tag {
+    position: absolute;
+    top: 15px;
+    right: -30px;
+    background-color: #e53935; /* Vermelho da promoção */
+    color: white;
+    padding: 8px 30px;
     font-weight: bold;
+    font-size: 14px;
+    transform: rotate(45deg);
+    z-index: 2;
 }
 
-/* Container para o conteúdo principal */
-.carrinho-container {
-    padding: 25px;
+.promo-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
 }
 
-/* Secção do resumo do pedido */
-.order-summary {
-    background-color: #eeeeee;
-    border-radius: 8px;
+.promo-details {
     padding: 20px;
-    margin-bottom: 30px;
 }
 
-.restaurant-name {
-    font-size: 24px;
+.promo-title {
+    font-size: 1.5rem;
     font-weight: bold;
     color: #333;
-    margin: 0 0 20px 0;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #ddd;
+    margin: 0 0 10px 0;
 }
 
-.summary-row {
-    display: flex;
-    justify-content: space-between;
-    font-size: 16px;
-    color: #555;
-    margin-bottom: 15px;
-}
-
-.total-row {
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-    margin-top: 20px;
-    padding-top: 15px;
-    border-top: 1px solid #ddd;
-}
-
-/* Secção das formas de pagamento */
-.payment-methods .section-title {
-    font-size: 22px;
-    font-weight: bold;
-    color: #333;
+.promo-description {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
     margin-bottom: 20px;
 }
 
-.payment-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.promo-pricing {
+    display: flex;
+    align-items: baseline;
     gap: 15px;
+    margin-bottom: 20px;
 }
 
-.payment-button {
-    background-color: #e0e0e0;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 20px;
-    font-size: 16px;
+.promo-original-price {
+    font-size: 1rem;
+    color: #999;
+    text-decoration: line-through;
+}
+
+.promo-new-price {
+    font-size: 1.8rem;
     font-weight: bold;
-    color: #333;
-    cursor: pointer;
+    color: #e53935;
+}
+
+.promo-action-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #e53935;
+    color: white;
     text-align: center;
-    transition: background-color 0.2s ease, transform 0.1s ease;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
-.payment-button:hover {
-    background-color: #d0d0d0;
+.promo-action-button:hover {
+    background-color: #c42f2f;
+    transform: scale(1.03);
+}
+/* ==========================================================================
+   Estilos da Página Kakumi Cozinha
+   ========================================================================== */
+
+.kakumi-page {
+    background-color: #b91c1c; /* Vermelho escuro do figma */
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.payment-button:active {
-    transform: scale(0.98);
+.kk-header {
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.kk-header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 300; /* Fonte mais fina, como no design */
+    font-style: italic;
+}
+
+.kk-back-link {
+    position: absolute;
+    left: 20px;
+    color: white;
+    font-size: 28px;
+    text-decoration: none;
+}
+
+.kk-menu-container {
+    padding: 10px 30px 30px 30px;
+}
+
+.kk-menu-card {
+    background-color: white;
+    border-radius: 4px;
+    padding: 15px;
+}
+
+.kk-menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.kk-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 5px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.kk-menu-item:last-child {
+    border-bottom: none;
+}
+
+.kk-item-image {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.kk-item-info {
+    flex-grow: 1; /* Ocupa o espaço disponível */
+    display: flex;
+    flex-direction: column;
+}
+
+.kk-item-name {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.kk-item-price {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 5px;
+}
+
+.kk-cart-link {
+    font-size: 1.8rem;
+    color: #b91c1c; /* Vermelho para combinar */
+    text-decoration: none;
+    transition: transform 0.2s ease;
+    padding-left: 10px;
+}
+
+.kk-cart-link:hover {
+    transform: scale(1.1);
+}
+/* ==========================================================================
+   Estilos da Página Dogão da Tia Zezé (VERSÃO FULL SCREEN COM TÍTULO)
+   ========================================================================== */
+
+.tia-zeze-page {
+    background-color: #7a7a3b; /* Cor de fundo oliva do figma */
+    min-height: 100vh;
+    color: white;
+    font-family: 'Courier New', Courier, monospace; /* Fonte com estilo retro */
+    box-sizing: border-box;
+}
+
+.tz-header {
+    display: flex;
+    justify-content: center; /* Centraliza o título */
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 15px;
+    position: relative; /* Permite posicionar os ícones de forma absoluta */
+}
+
+.tz-header h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.tz-icon-link-left,
+.tz-icon-link-right {
+    color: white;
+    font-size: 1.8rem;
+    text-decoration: none;
+    position: absolute; /* Posiciona os ícones nas bordas */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.tz-icon-link-left {
+    left: 20px;
+}
+
+.tz-icon-link-right {
+    right: 20px;
+}
+
+.tz-content {
+    text-align: center;
+    padding: 0 20px 20px 20px;
+}
+
+.tz-logo {
+    max-width: 250px;
+    width: 100%;
+    border-radius: 8px;
+    border: 3px solid white;
+}
+
+.tz-menu-title {
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin: 15px 0 30px 0;
+    text-align: center;
+}
+
+.tz-menu {
+    text-align: left;
+}
+
+.tz-section-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.tz-menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tz-menu-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    font-size: 1.1rem;
+}
+
+.tz-item-name,
+.tz-item-price {
+    white-space: nowrap;
+}
+
+.tz-item-dots {
+    flex-grow: 1;
+    border-bottom: 2px dashed white;
+    margin: 0 10px;
+    position: relative;
+    bottom: 4px;
+}
+
+.tz-cart-link {
+    font-size: 1.8rem;
+    color: white;
+    text-decoration: none;
+    padding-left: 15px;
+    transition: transform 0.2s ease;
+}
+
+.tz-cart-link:hover {
+    transform: scale(1.1);
+}
+/* ==========================================================================
+   Estilos da Página Good Burger
+   ========================================================================== */
+
+.good-burger-page {
+    background-color: #1A1A40; /* Azul escuro do figma */
+    min-height: 100vh;
+    color: white;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.gb-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.gb-icon-link {
+    color: white;
+    font-size: 1.8rem;
+    text-decoration: none;
+}
+
+.gb-content {
+    text-align: center;
+}
+
+.gb-logo {
+    max-width: 250px;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.gb-menu-title {
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin: 15px 0 30px 0;
+    text-align: center;
+}
+
+.gb-menu {
+    text-align: left;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.gb-section-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.gb-menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.gb-menu-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    font-size: 1.1rem;
+}
+
+.gb-item-name,
+.gb-item-price {
+    white-space: nowrap; /* Impede que o texto quebre a linha */
+}
+
+.gb-item-dots {
+    flex-grow: 1; /* Ocupa todo o espaço disponível */
+    border-bottom: 2px dashed white;
+    margin: 0 10px;
+    position: relative;
+    bottom: 4px;
+}
+
+.gb-cart-link {
+    font-size: 1.8rem;
+    color: white;
+    text-decoration: none;
+    padding-left: 15px;
+    transition: transform 0.2s ease;
+}
+
+.gb-cart-link:hover {
+    transform: scale(1.1);
 }
