@@ -1,0 +1,46 @@
+{% extends 'contas/base.html' %}
+{% load static %}
+
+{% block title %}Kakumi Cozinha{% endblock %}
+
+{% block content %}
+<div class="kakumi-page">
+    <header class="kk-header">
+        <a href="{% url 'quiosques' %}" class="kk-back-link">&#8592;</a>
+        <h1>Kakumi cozinha</h1>
+    </header>
+
+    <main class="kk-menu-container">
+        <div class="kk-menu-card">
+            <ul class="kk-menu-list">
+                <li class="kk-menu-item">
+                    <img src="https://i.imgur.com/your_image_url_1.jpeg" alt="Wrap de frango empanado com wasabi" class="kk-item-image">
+                    <div class="kk-item-info">
+                        <span class="kk-item-name">Wrap de frango empanado com wasabi</span>
+                        <span class="kk-item-price">R$32,99</span>
+                    </div>
+                    <a href="{% url 'add_carrinho' produto_nome='Wrap Empanado Wasabi' produto_preco='32.99' %}" class="kk-cart-link">&#128722;</a>
+                </li>
+
+                <li class="kk-menu-item">
+                    <img src="https://i.imgur.com/your_image_url_2.jpeg" alt="Wrap de frango com wasabi" class="kk-item-image">
+                    <div class="kk-item-info">
+                        <span class="kk-item-name">Wrap de frango com wasabi</span>
+                        <span class="kk-item-price">R$30,99</span>
+                    </div>
+                    <a href="{% url 'add_carrinho' produto_nome='Wrap Frango Wasabi' produto_preco='30.99' %}" class="kk-cart-link">&#128722;</a>
+                </li>
+
+                <li class="kk-menu-item">
+                    <img src="https://i.imgur.com/your_image_url_3.jpeg" alt="Wrap de frango empanado com Kelpie" class="kk-item-image">
+                    <div class="kk-item-info">
+                        <span class="kk-item-name">Wrap de frango empanado com Kelpie</span>
+                        <span class="kk-item-price">R$35,99</span>
+                    </div>
+                    <a href="{% url 'add_carrinho' produto_nome='Wrap Empanado Kelpie' produto_preco='35.99' %}" class="kk-cart-link">&#128722;</a>
+                </li>
+            </ul>
+        </div>
+    </main>
+</div>
+{% endblock %}
