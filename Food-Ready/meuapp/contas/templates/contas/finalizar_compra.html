@@ -1,0 +1,50 @@
+{% extends 'contas/base.html' %}
+{% load static %}
+
+{% block title %}Finalizar Compra{% endblock %}
+
+{% block content %}
+<div class="checkout-page">
+    <header class="checkout-header">
+        {# MODIFICADO: A seta agora aponta diretamente para a URL do carrinho #}
+        <a href="{% url 'carrinho' %}" class="back-link">&#8592;</a>
+        <h1 class="header-title">Pagamento</h1>
+    </header>
+
+    <main class="checkout-container">
+        
+        <div class="summary-card">
+            <div class="total-section" style="margin: 0; padding: 0;">
+                <span class="total-label">Valor a pagar</span>
+                <span class="total-value">R$ {{ total_carrinho|floatformat:2 }}</span>
+            </div>
+        </div>
+
+        <div class="summary-card payment-options">
+            <h2 class="card-title">Escolha a forma de pagamento</h2>
+            
+            <a href="#" class="payment-option">
+                <img src="https://logopng.com.br/logos/pix-106.svg" alt="Ícone Pix" class="payment-option-icon">
+                <span class="payment-option-name">Pix</span>
+                <span class="payment-option-arrow">&#8250;</span>
+            </a>
+            
+            <a href="#" class="payment-option">
+                <img src="https://cdn-icons-png.flaticon.com/512/349/349221.png" alt="Cartão de Crédito" class="payment-option-icon">
+                <span class="payment-option-name">Cartão de Crédito</span>
+                <span class="payment-option-arrow">&#8250;</span>
+            </a>
+
+            <a href="#" class="payment-option">
+                <img src="https://cdn-icons-png.flaticon.com/512/2331/2331749.png" alt="Boleto" class="payment-option-icon">
+                <span class="payment-option-name">Boleto</span>
+                <span class="payment-option-arrow">&#8250;</span>
+            </a>
+        </div>
+
+        <div class="action-button-container">
+            <button type="button" class="action-button">Finalizar Pedido</button>
+        </div>
+    </main>
+</div>
+{% endblock %}
