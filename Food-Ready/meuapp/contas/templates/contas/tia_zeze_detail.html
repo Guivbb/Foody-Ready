@@ -1,0 +1,47 @@
+{% extends 'contas/base.html' %}
+{% load static %}
+
+{% block title %}Dogão da Tia Zezé{% endblock %}
+
+{% block content %}
+<div class="tia-zeze-page">
+    <header class="tz-header">
+        <a href="{% url 'configuracoes' %}" class="tz-icon-link-left">&#9881;</a>
+        <h1>Dogão da Tia Zezé</h1>
+        <a href="{% url 'menu' %}" class="tz-icon-link-right">&#127968;</a>
+    </header>
+
+    <main class="tz-content">
+        <img src="https://www.tastingtable.com/img/gallery/whats-the-difference-between-hot-dogs-and-frankfurters/l-intro-1679424058.jpg" alt="Logo Dogão da Tia Zezé" class="tz-logo">
+        <h2 class="tz-menu-title">cardápio</h2>
+
+        <div class="tz-menu">
+            <h3 class="tz-section-title">Lanches</h3>
+            <ul class="tz-menu-list">
+                <li class="tz-menu-item">
+                    <span class="tz-item-name">Cachorro Quente</span>
+                    <span class="tz-item-dots"></span>
+                    <span class="tz-item-price">R$ 6,99</span>
+                    <a href="{% url 'add_carrinho' produto_nome='Cachorro Quente' produto_preco='6.99' %}" class="tz-cart-link">&#128722;</a>
+                </li>
+                <li class="tz-menu-item">
+                    <span class="tz-item-name">Guaraná Natural</span>
+                    <span class="tz-item-dots"></span>
+                    <span class="tz-item-price">R$ 3,99</span>
+                    <a href="{% url 'add_carrinho' produto_nome='Guaraná Natural' produto_preco='3.99' %}" class="tz-cart-link">&#128722;</a>
+                </li>
+            </ul>
+
+            <h3 class="tz-section-title">Promoções</h3>
+            <ul class="tz-menu-list">
+                <li class="tz-menu-item">
+                    <span class="tz-item-name">Cachorro + Guaraná Natural</span>
+                    <span class="tz-item-dots"></span>
+                    <span class="tz-item-price">R$ 10,99</span>
+                    <a href="{% url 'add_carrinho' produto_nome='Promo Cachorro + Guaraná' produto_preco='10.99' %}" class="tz-cart-link">&#128722;</a>
+                </li>
+            </ul>
+        </div>
+    </main>
+</div>
+{% endblock %}
