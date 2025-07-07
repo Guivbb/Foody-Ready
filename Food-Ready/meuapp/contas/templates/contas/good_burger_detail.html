@@ -1,0 +1,60 @@
+{% extends 'contas/base.html' %}
+{% load static %}
+
+{% block title %}Good Burger{% endblock %}
+
+{% block content %}
+<div class="good-burger-page">
+    <header class="gb-header">
+        <a href="{% url 'configuracoes' %}" class="gb-icon-link">&#9881;</a>
+        <a href="{% url 'menu' %}" class="gb-icon-link">&#127968;</a>
+    </header>
+
+    <main class="gb-content">
+        <img src="https://i.imgur.com/your_logo_url.png" alt="Logo Good Burger" class="gb-logo">
+        <h2 class="gb-menu-title">cardápio</h2>
+
+        <div class="gb-menu">
+            <h3 class="gb-section-title">Café da manhã</h3>
+            <ul class="gb-menu-list">
+                <li class="gb-menu-item">
+                    <span class="gb-item-name">Pão na chapa</span>
+                    <span class="gb-item-dots"></span>
+                    <span class="gb-item-price">R$ 3,99</span>
+                    <a href="{% url 'add_carrinho' produto_nome='Pão na chapa' produto_preco='3.99' %}" class="gb-cart-link">&#128722;</a>
+                </li>
+                <li class="gb-menu-item">
+                    <span class="gb-item-name">Pão com ovo</span>
+                    <span class="gb-item-dots"></span>
+                    <span class="gb-item-price">R$ 4,59</span>
+                    <a href="{% url 'add_carrinho' produto_nome='Pão com ovo' produto_preco='4.59' %}" class="gb-cart-link">&#128722;</a>
+                </li>
+                <li class="gb-menu-item">
+                    <span class="gb-item-name">Pão com ovo e minas</span>
+                    <span class="gb-item-dots"></span>
+                    <span class="gb-item-price">R$ 3,99</span>
+                    <a href="{% url 'add_carrinho' produto_nome='Pão com ovo e minas' produto_preco='3.99' %}" class="gb-cart-link">&#128722;</a>
+                </li>
+                 <li class="gb-menu-item">
+                    <span class="gb-item-name">Misto quente</span>
+                    <span class="gb-item-dots"></span>
+                    <span class="gb-item-price">R$ 5,39</span>
+                    <a href="{% url 'add_carrinho' produto_nome='Misto quente' produto_preco='5.39' %}" class="gb-cart-link">&#128722;</a>
+                </li>
+                 <li class="gb-menu-item">
+                    <span class="gb-item-name">Misto com minas</span>
+                    <span class="gb-item-dots"></span>
+                    <span class="gb-item-price">R$ 7,99</span>
+                    <a href="{% url 'add_carrinho' produto_nome='Misto com minas' produto_preco='7.99' %}" class="gb-cart-link">&#128722;</a>
+                </li>
+                 <li class="gb-menu-item">
+                    <span class="gb-item-name">10 pães de queijo</span>
+                    <span class="gb-item-dots"></span>
+                    <span class="gb-item-price">R$ 10,00</span>
+                    <a href="{% url 'add_carrinho' produto_nome='10 pães de queijo' produto_preco='10.00' %}" class="gb-cart-link">&#128722;</a>
+                </li>
+            </ul>
+        </div>
+    </main>
+</div>
+{% endblock %}
