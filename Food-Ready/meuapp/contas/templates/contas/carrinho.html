@@ -4,49 +4,50 @@
 {% block title %}Carrinho de Compras{% endblock %}
 
 {% block content %}
-<div class="carrinho-page">
-    <header class="carrinho-header">
-        <a href="javascript:history.back()" class="icon-link" style="position: absolute; left: 20px;">&#8592;</a>
-        <h1>Pagamento</h1>
+<div class="checkout-page">
+    <header class="checkout-header">
+        {# CORREÇÃO FINAL: O href agora usa a variável 'last_restaurant_url' vinda da view. #}
+        <a href="{{ last_restaurant_url }}" class="back-link">&#8592;</a>
+        <h1 class="header-title">Meu Carrinho</h1>
     </header>
 
-    <main class="carrinho-container">
-        
-        <section class="order-summary">
-            {# No futuro, podemos passar o nome do restaurante também #}
-            <h2 class="restaurant-name">Resumo do Pedido</h2>
-            
-            <div class="summary-details">
-                {# Loop para mostrar cada item do carrinho #}
+    <main class="checkout-container">
+        {% if carrinho %}
+            <div class="summary-card">
+                <h2 class="card-title">Resumo do Pedido</h2>
+                
                 {% for nome, detalhes in carrinho.items %}
-                <div class="summary-row">
-                    <span>{{ nome }} ({{ detalhes.quantidade }}x)</span>
-                    <span>R${{ detalhes.preco|floatformat:2 }}</span>
-                </div>
-                {% empty %}
-                <div class="summary-row">
-                    <span>O seu carrinho está vazio.</span>
+                <div class="cart-item">
+                    <div class="cart-item-details">
+                        <span class="cart-item-name">{{ nome }}</span>
+                        <span class="cart-item-price">R$ {{ detalhes.preco|floatformat:2 }} /un</span>
+                    </div>
+                    
+                    <div class="cart-item-quantity">
+                        <a href="{% url 'atualizar_carrinho' produto_nome=nome action='remover' %}" class="quantity-btn">-</a>
+                        <span class="quantity-text">{{ detalhes.quantidade }}</span>
+                        <a href="{% url 'atualizar_carrinho' produto_nome=nome action='adicionar' %}" class="quantity-btn">+</a>
+                    </div>
                 </div>
                 {% endfor %}
 
-                {# Mostra o total calculado na view #}
-                <div class="summary-row total-row">
-                    <strong>Total</strong>
-                    <strong>R${{ total_carrinho|floatformat:2 }}</strong>
+                <div class="total-section">
+                    <span class="total-label">Total</span>
+                    <span class="total-value">R$ {{ total_carrinho|floatformat:2 }}</span>
                 </div>
             </div>
-        </section>
 
-        <section class="payment-methods">
-            <h2 class="section-title">Forma de Pagamento</h2>
-            <div class="payment-grid">
-                <button type="button" class="payment-button">Pix</button>
-                <button type="button" class="payment-button">Cartão de Crédito</button>
-                <button type="button" class="payment-button">Dinheiro</button>
-                <button type="button" class="payment-button">Cartão de Débito</button>
+            <div class="action-button-container">
+                <a href="{% url 'finalizar_compra' %}" class="action-button">Continuar para Pagamento</a>
             </div>
-        </section>
 
+        {% else %}
+            <div class="summary-card empty-cart-container">
+                <div class="empty-cart-icon">&#128722;</div>
+                <p class="empty-cart-text">Seu carrinho está vazio.</p>
+                <a href="{% url 'menu' %}" class="action-button">Ver Menu</a>
+            </div>
+        {% endif %}
     </main>
 </div>
 {% endblock %}
