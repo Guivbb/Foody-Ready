@@ -10,10 +10,13 @@
     </header>
 
     <div class="split-screen-container">
+        
+        {# -- PAINEL ESQUERDO: LOGIN -- #}
         <div class="split-panel panel-left">
             <div class="panel-content">
                 <h2>Bem-Vindo de Volta</h2>
                 <p>Acesse sua conta</p>
+                {# Formulário de Login aponta para a URL 'login' #}
                 <form method="post" class="auth-form" action="{% url 'login' %}">
                     {% csrf_token %}
                     <div class="form-group">
@@ -22,7 +25,7 @@
                     <div class="form-group">
                         {{ login_form.password }}
                     </div>
-                     {% if login_form.non_field_errors or login_form.username.errors or login_form.password.errors %}
+                    {% if login_form.non_field_errors %}
                         <div class="form-errors">
                             <p>Usuário ou senha inválidos. Tente novamente.</p>
                         </div>
@@ -32,11 +35,13 @@
             </div>
         </div>
 
+        {# -- PAINEL DIREITO: CADASTRO -- #}
         <div class="split-panel panel-right">
             <div class="panel-content">
                 <h2 class="text-primary">Crie sua conta</h2>
                 <p>Cadastre seus dados</p>
-                <form method="post" class="auth-form" action="{% url 'login' %}">
+                {# Formulário de Cadastro aponta para a URL 'cadastro' #}
+                <form method="post" class="auth-form" action="{% url 'cadastro' %}">
                     {% csrf_token %}
                     <div class="form-group">
                        {{ register_form.username }}
@@ -51,9 +56,9 @@
                         {% endif %}
                     </div>
                     <div class="form-group">
-                        {{ register_form.password1 }}
-                         {% if register_form.password1.errors %}
-                            <div class="form-errors">{{ register_form.password1.errors|first }}</div>
+                        {{ register_form.password }}
+                         {% if register_form.password.errors %}
+                            <div class="form-errors">{{ register_form.password.errors|first }}</div>
                         {% endif %}
                     </div>
                     <div class="form-group">
