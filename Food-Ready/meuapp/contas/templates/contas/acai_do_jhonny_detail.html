@@ -1,0 +1,45 @@
+{% extends 'contas/base.html' %}
+{% load static %}
+
+{% block title %}Açaí do Jhonny{% endblock %}
+
+{% block content %}
+<div class="acai-jhonny-page">
+    <header class="aj-header">
+        <a href="{% url 'quiosques' %}" class="aj-back-link">&#8592;</a>
+        <h1>Açaí do Jhonny</h1>
+    </header>
+    <div class="aj-divider"></div>
+
+    <div class="aj-menu-container">
+        <main class="aj-menu-card">
+            <h2 class="aj-card-title">CARDÁPIO</h2>
+            <img src="https://www.sorpack.com.br/storage/empresas/14012344000125/produtos/2bX8TXufz3S3UA4w3qnCfLu27IpABC-metaU0tVIDE4ODUyIDAyLnBuZw==-_principal.jpg" alt="Copo de Açaí" class="aj-card-image">
+
+            <ul class="aj-options-list">
+                <li class="aj-menu-option">
+                    <div class="aj-item-info">
+                        <span class="aj-item-name">Açaí Pequeno</span>
+                        <span class="aj-item-price">R$13,00</span>
+                    </div>
+                    <a href="{% url 'add_carrinho' produto_nome='Açaí Pequeno' produto_preco='13.00' %}" class="aj-cart-link">&#128722;</a>
+                </li>
+                <li class="aj-menu-option">
+                    <div class="aj-item-info">
+                        <span class="aj-item-name">Açaí Médio</span>
+                        <span class="aj-item-price">R$14,00</span>
+                    </div>
+                    <a href="{% url 'add_carrinho' produto_nome='Açaí Médio' produto_preco='14.00' %}" class="aj-cart-link">&#128722;</a>
+                </li>
+                <li class="aj-menu-option">
+                    <div class="aj-item-info">
+                        <span class="aj-item-name">Açaí Grande</span>
+                        <span class="aj-item-price">R$15,00</span>
+                    </div>
+                    <a href="{% url 'add_carrinho' produto_nome='Açaí Grande' produto_preco='15.00' %}" class="aj-cart-link">&#128722;</a>
+                </li>
+            </ul>
+        </main>
+    </div>
+</div>
+{% endblock %}
