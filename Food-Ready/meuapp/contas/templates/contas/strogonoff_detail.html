@@ -1,0 +1,55 @@
+{% extends 'contas/base.html' %}
+{% load static %}
+
+{% block title %}Quiosque Strogonoff{% endblock %}
+
+{% block content %}
+<div class="strogonoff-page">
+    <header class="sg-header">
+        <a href="{% url 'quiosques' %}" class="sg-back-link">&#8592;</a>
+        <h1>Strogonoff</h1>
+    </header>
+    <div class="sg-divider"></div>
+
+    <main class="sg-menu-card">
+        <h2 class="sg-card-title">CARDÁPIO</h2>
+        <img src="https://s2.glbimg.com/9K6ssYaAVvXEhBHnKLnvRKfrTjU=/0x0:660x330/984x0/smart/filters:strip_icc()/s.glbimg.com/po/rc/media/2015/02/10/21_17_27_797_STROGOnof_FRANGO_660x330.jpg" alt="Prato de Strogonoff" class="sg-card-image">
+
+        <div class="sg-menu-section">
+            <h3 class="sg-section-title">Estrogonoff Médio:</h3>
+            <ul class="sg-options-list">
+                <li class="sg-menu-option">
+                    <span>Frango - R$ 16,00</span>
+                    <a href="{% url 'add_carrinho' produto_nome='Strogonoff Médio de Frango' produto_preco='16.00' %}" class="sg-cart-link">&#128722;</a>
+                </li>
+                <li class="sg-menu-option">
+                    <span>Carne - R$ 18,00</span>
+                    <a href="{% url 'add_carrinho' produto_nome='Strogonoff Médio de Carne' produto_preco='18.00' %}" class="sg-cart-link">&#128722;</a>
+                </li>
+                <li class="sg-menu-option">
+                    <span>Abobrinha - R$ 13,00</span>
+                    <a href="{% url 'add_carrinho' produto_nome='Strogonoff Médio de Abobrinha' produto_preco='13.00' %}" class="sg-cart-link">&#128722;</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="sg-menu-section">
+            <h3 class="sg-section-title">Caprichado:</h3>
+            <ul class="sg-options-list">
+                <li class="sg-menu-option">
+                    <span>Frango - R$ 21,00</span>
+                    <a href="{% url 'add_carrinho' produto_nome='Strogonoff Caprichado de Frango' produto_preco='21.00' %}" class="sg-cart-link">&#128722;</a>
+                </li>
+                <li class="sg-menu-option">
+                    <span>Carne - R$ 23,00</span>
+                    <a href="{% url 'add_carrinho' produto_nome='Strogonoff Caprichado de Carne' produto_preco='23.00' %}" class="sg-cart-link">&#128722;</a>
+                </li>
+                <li class="sg-menu-option">
+                    <span>Abobrinha - R$ 18,00</span>
+                    <a href="{% url 'add_carrinho' produto_nome='Strogonoff Caprichado de Abobrinha' produto_preco='18.00' %}" class="sg-cart-link">&#128722;</a>
+                </li>
+            </ul>
+        </div>
+    </main>
+</div>
+{% endblock %}
