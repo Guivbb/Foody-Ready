@@ -1,0 +1,50 @@
+{% extends 'contas/base.html' %}
+{% load static %}
+
+{% block title %}Na Medida{% endblock %}
+
+{% block content %}
+<div class="na-medida-page">
+    <header class="nm-header">
+        <a href="{% url 'restaurantes' %}" class="nm-back-link">&#8592;</a>
+        <h1 class="nm-header-title">Na Medida</h1>
+    </header>
+
+    <main class="nm-menu-container">
+        <ul class="nm-menu-list">
+            <li class="nm-menu-item">
+                <img src="https://i0.wp.com/saboresdamaua.com.br/wp-content/uploads/2023/10/frango-grelhadocomfritas.png?fit=1080%2C1080&ssl=1" alt="Filé de frango com fritas" class="nm-item-image">
+                <div class="nm-item-info">
+                    <span class="nm-item-name">Filé de frango com fritas</span>
+                    <span class="nm-item-price">R$ 35,99</span>
+                </div>
+                <div class="nm-item-action">
+                    <a href="{% url 'add_carrinho' produto_nome='Filé de Frango c/ Fritas' produto_preco='35.99' %}" class="nm-cart-link">&#128722;</a>
+                </div>
+            </li>
+
+            <li class="nm-menu-item">
+                <img src="https://i.pinimg.com/736x/30/36/ae/3036ae2a08fe702da978caf45a699d52.jpg" alt="Strogonoff de frango" class="nm-item-image">
+                <div class="nm-item-info">
+                    <span class="nm-item-name">Strogonoff de frango</span>
+                    <span class="nm-item-price">R$ 32,99</span>
+                </div>
+                <div class="nm-item-action">
+                    <a href="{% url 'add_carrinho' produto_nome='Strogonoff de Frango' produto_preco='32.99' %}" class="nm-cart-link">&#128722;</a>
+                </div>
+            </li>
+
+            <li class="nm-menu-item">
+                <img src="https://cloudfront-us-east-1.images.arcpublishing.com/estadao/QJZFORPYU5PSJK2POXJHXTLZII.jpg" alt="Spaghetti com filé de carne" class="nm-item-image">
+                <div class="nm-item-info">
+                    <span class="nm-item-name">Spaghetti com filé de carne</span>
+                    <span class="nm-item-price">R$ 36,99</span>
+                </div>
+                <div class="nm-item-action">
+                    <a href="{% url 'add_carrinho' produto_nome='Spaghetti c/ Filé' produto_preco='36.99' %}" class="nm-cart-link">&#128722;</a>
+                </div>
+            </li>
+        </ul>
+    </main>
+</div>
+{% endblock %}
