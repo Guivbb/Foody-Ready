@@ -1,0 +1,31 @@
+{% extends 'contas/base.html' %}
+{% load static %}
+
+{% block title %}Configurações{% endblock %}
+
+{% block content %}
+<div class="config-page">
+    <header class="config-header">
+        <a href="{% url 'menu' %}" class="config-back-link">&#8592;</a>
+        <h1>Configurações</h1>
+    </header>
+
+    <main class="config-container">
+        <ul class="config-options-list">
+            <li>
+                <a href="{% url 'carrinho' %}" class="config-option-link">
+                    <span class="config-option-text">Meu Carrinho</span>
+                    <span class="config-option-arrow">&#8250;</span>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'logout' %}" class="config-option-link">
+                    <span class="config-option-text">Sair da conta</span>
+                    <span class="config-option-arrow">&#8250;</span>
+                </a>
+            </li>
+            {# Adicione mais opções aqui no futuro, se precisar #}
+        </ul>
+    </main>
+</div>
+{% endblock %}
