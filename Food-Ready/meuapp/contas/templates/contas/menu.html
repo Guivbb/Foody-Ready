@@ -6,7 +6,7 @@
 {% block content %}
 <div class="menu-principal-container">
     <header class="menu-header-v2">
-        <a href="#configuracoes" class="settings-icon" aria-label="Configurações">&#9881;</a>
+        <a href="{% url 'configuracoes' %}" class="settings-icon" aria-label="Configurações">&#9881;</a>
         <h1>Menu</h1>
     </header>
 
@@ -24,7 +24,7 @@
             </a>
         </li>
         <li>
-            <a href="#promocoes" class="menu-item-v2 promo-item">
+            <a href="{% url 'promocoes' %}" class="menu-item-v2 promo-item">
                 <div class="promo-icon">&#128227;</div>
                 <span class="menu-item-text">promoções</span>
             </a>
